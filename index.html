@@ -3,19 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Daima Oyunda - YouTube Kanalı</title>
+    <title>Daima Oyunda</title>
     <style>
-        /* Temel stiller */
+        /* Sayfa genel stili */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             color: #333;
             background-image: url('https://via.placeholder.com/1920x1080'); /* Arka plan görseli */
-            background-size: cover; /* Görselin tam ekran kaplamasını sağlar */
-            background-position: center; /* Görselin merkezde konumlanmasını sağlar */
-            background-attachment: fixed; /* Görselin sayfa kaydırıldığında sabit kalmasını sağlar */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             height: 100vh; /* Sayfanın tamamının görseli kapsaması için */
             display: flex;
             flex-direction: column;
@@ -27,58 +26,79 @@
             text-align: center;
             width: 100%;
         }
-        .container {
-            width: 80%;
-            margin: 0 auto;
-            padding: 20px 0;
-            flex: 1; /* İçeriğin ekranı doldurması için */
+        .menu {
             text-align: center;
+            margin-top: 20px;
         }
-        .channel-info h1 {
-            margin: 0;
-            font-size: 2em;
-        }
-        .channel-info p {
-            font-size: 1.2em;
-            margin: 10px 0;
-        }
-        .button {
-            display: inline-block;
+        .menu button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
             background-color: #007bff;
             color: white;
-            padding: 10px 20px;
-            text-decoration: none;
+            border: none;
             border-radius: 5px;
-            margin-top: 20px;
         }
-        .button:hover {
+        .menu button:hover {
             background-color: #0056b3;
         }
-        footer {
-            background-color: rgba(51, 51, 51, 0.7); /* Yarı saydam arka plan */
-            color: white;
-            padding: 10px 0;
+        /* Dinamik içerik alanı */
+        .content {
+            margin: 20px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8); /* İçerik kutusu yarı saydam */
+            border: 1px solid #ddd;
+            border-radius: 5px;
             text-align: center;
-            margin-top: 20px;
+        }
+        .content h2 {
+            font-size: 24px;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Daima Oyunda</h1>
-        <p>Gaming ve Eğitim İçeriği</p>
+        <h1>Daima Oyunda'ya Hoş Geldiniz!</h1>
+        <p>Burada oyun videoları, açıklamalar ve tanışma fırsatları bulabilirsiniz.</p>
     </header>
 
-    <div class="container">
-        <div class="channel-info">
-            <h1>Daima Oyunda YouTube Kanalı</h1>
-            <p>Kanalımızda MW3, Marvel: Contest of Champions, PUBG Mobile gibi oyunların yanı sıra, program eğitimlerine de yer veriyoruz. Hedefimiz, her seviyedeki oyuncuya hitap etmek ve eğlenceli içerikler sunmaktır.</p>
-            <a href="https://www.youtube.com/channel/UC6cQmf9nb_Iv2fWjEQoonLA" class="button" target="_blank">Kanalımıza Git</a>
-        </div>
+    <!-- Menü Seçenekleri -->
+    <div class="menu">
+        <button onclick="showContent('videos')">Oyun Videoları</button>
+        <button onclick="showContent('descriptions')">Oyun Açıklamaları</button>
+        <button onclick="showContent('meet')">Tanışma Platformu</button>
+        <button onclick="showContent('team')">Ekip Platformu</button>
     </div>
 
-    <footer>
-        <p>&copy; 2024 Daima Oyunda. Tüm hakları saklıdır.</p>
-    </footer>
+    <!-- Dinamik İçerik Alanı -->
+    <div class="content" id="content">
+        <p>İçerik görmek için yukarıdaki seçeneklerden birine tıklayın.</p>
+    </div>
+
+    <script>
+        // Dinamik içerik gösterme fonksiyonu
+        function showContent(contentType) {
+            let content = document.getElementById('content');
+            
+            // İçeriği değiştir
+            switch (contentType) {
+                case 'videos':
+                    content.innerHTML = '<h2>Oyun Videoları</h2><p>Burada en yeni oyun videolarımızı bulabilirsiniz.</p>';
+                    break;
+                case 'descriptions':
+                    content.innerHTML = '<h2>Oyun Açıklamaları</h2><p>Oyunlarımız hakkında detaylı açıklamaları burada bulabilirsiniz.</p>';
+                    break;
+                case 'meet':
+                    content.innerHTML = '<h2>Tanışma Platformu</h2><p>Diğer oyuncularla tanışabilir ve sosyal etkileşimde bulunabilirsiniz.</p>';
+                    break;
+                case 'team':
+                    content.innerHTML = '<h2>Ekip Platformu</h2><p>Oyuncu ekibimizle iletişime geçebilir ve birlikte oyun oynayabilirsiniz.</p>';
+                    break;
+                default:
+                    content.innerHTML = '<p>İçerik görmek için yukarıdaki seçeneklerden birine tıklayın.</p>';
+            }
+        }
+    </script>
 </body>
 </html>
