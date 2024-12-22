@@ -1,0 +1,16 @@
+<head><style>
+  #hakkimizda {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+    text-align: center;
+  }
+  #hakkimizda h2 {
+    color: #333;
+  }
+  #hakkimizda p {
+    color: #555;
+    line-height: 1.6;
+  }
+</style><head>
