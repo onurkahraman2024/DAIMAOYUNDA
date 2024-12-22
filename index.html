@@ -11,31 +11,36 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
             color: #333;
             background-image: url('https://via.placeholder.com/1920x1080'); /* Arka plan görseli */
             background-size: cover; /* Görselin tam ekran kaplamasını sağlar */
             background-position: center; /* Görselin merkezde konumlanmasını sağlar */
+            background-attachment: fixed; /* Görselin sayfa kaydırıldığında sabit kalmasını sağlar */
+            height: 100vh; /* Sayfanın tamamının görseli kapsaması için */
+            display: flex;
+            flex-direction: column;
         }
         header {
-            background-color: rgba(51, 51, 51, 0.8); /* Yarı saydam arka plan */
+            background-color: rgba(51, 51, 51, 0.7); /* Yarı saydam arka plan */
             color: white;
-            padding: 10px 0;
+            padding: 20px 0;
             text-align: center;
+            width: 100%;
         }
         .container {
             width: 80%;
             margin: 0 auto;
             padding: 20px 0;
-        }
-        .channel-info {
+            flex: 1; /* İçeriğin ekranı doldurması için */
             text-align: center;
         }
         .channel-info h1 {
             margin: 0;
+            font-size: 2em;
         }
         .channel-info p {
             font-size: 1.2em;
+            margin: 10px 0;
         }
         .button {
             display: inline-block;
@@ -50,7 +55,7 @@
             background-color: #0056b3;
         }
         footer {
-            background-color: rgba(51, 51, 51, 0.8); /* Yarı saydam arka plan */
+            background-color: rgba(51, 51, 51, 0.7); /* Yarı saydam arka plan */
             color: white;
             padding: 10px 0;
             text-align: center;
@@ -68,7 +73,7 @@
         <div class="channel-info">
             <h1>Daima Oyunda YouTube Kanalı</h1>
             <p>Kanalımızda MW3, Marvel: Contest of Champions, PUBG Mobile gibi oyunların yanı sıra, program eğitimlerine de yer veriyoruz. Hedefimiz, her seviyedeki oyuncuya hitap etmek ve eğlenceli içerikler sunmaktır.</p>
-            <a href="https://www.youtube.com/channel/UCd68z3s8DNw_MFvRU6bjyow" class="button" target="_blank">Kanalımıza Git</a>
+            <a href="https://www.youtube.com/channel/UC6cQmf9nb_Iv2fWjEQoonLA" class="button" target="_blank">Kanalımıza Git</a>
         </div>
     </div>
 
