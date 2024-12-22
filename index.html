@@ -13,9 +13,11 @@
             background-repeat: no-repeat; /* Görsel tekrar etmez */
             background-attachment: fixed; /* Arka plan sabitlenir */
             background-position: center; /* Görsel merkezlenir */
-            color: white; /* Yazıları daha okunabilir hale getirmek için beyaz yapıyoruz */
+            background-color: #000; /* Eğer görsel yüklenemezse, siyah arka plan */
+            color: white; /* Yazıları beyaz yapıyoruz */
             margin: 0;
             padding: 0;
+            height: 100vh; /* Sayfa yüksekliği %100 */
         }
         h1 {
             font-size: 2.5rem;
@@ -26,7 +28,7 @@
         p.intro {
             font-size: 1.5rem;
             font-weight: bold;
-            color: #555;
+            color: white; /* Beyaz renk */
             text-align: center;
             margin: 20px auto;
         }
@@ -35,9 +37,10 @@
             line-height: 1.6;
             margin: 10px 20px;
             text-align: justify;
+            color: white; /* Beyaz renk */
         }
         #hakkimizda {
-            background-color: rgba(255, 255, 255, 0.8); /* Yarı saydam arka plan */
+            background-color: rgba(0, 0, 0, 0.6); /* Yarı saydam siyah arka plan */
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             margin: 20px auto;
@@ -47,7 +50,7 @@
         }
         h2 {
             font-size: 2rem;
-            color: #333;
+            color: white; /* Beyaz renk */
             text-align: center;
             margin-bottom: 15px;
         }
