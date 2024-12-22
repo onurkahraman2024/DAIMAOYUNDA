@@ -47,3 +47,11 @@ a {
 a:hover {
     text-decoration: underline;
 }
+body {
+    background-image: url('https://upload.wikimedia.org/wikipedia/en/8/88/Marvel_Contest_of_Champions_logo.png'); /* Görsel URL'si */
+    background-size: cover; /* Görsel ekranı kaplar */
+    background-repeat: no-repeat; /* Görsel tekrar etmez */
+    background-attachment: fixed; /* Arka plan sabitlenir */
+    background-position: center; /* Görsel merkezlenir */
+    color: white; /* Yazıları daha okunabilir hale getirmek için beyaz yapıyoruz */
+}
