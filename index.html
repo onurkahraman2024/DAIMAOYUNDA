@@ -1,72 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daima Oyunda</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f9f9f9;
-            color: #333;
-            margin: 0;
-            padding: 0;
-        }
-        h1 {
-            font-size: 2.5rem;
-            color: #ff4500;
-            text-align: center;
-            margin-top: 20px;
-        }
-        p.intro {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #555;
-            text-align: center;
-            margin: 20px auto;
-        }
-        p {
-            font-size: 1.2rem;
-            line-height: 1.6;
-            margin: 10px 20px;
-            text-align: justify;
-        }
-        #hakkimizda {
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            margin: 20px auto;
-            padding: 20px;
-            width: 90%;
-            max-width: 800px;
-        }
-        h2 {
-            font-size: 2rem;
-            color: #333;
-            text-align: center;
-            margin-bottom: 15px;
-        }
-        a {
-            color: #007acc;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Daima Oyunda'ya Hoş Geldiniz!</h1>
-    <p class="intro">Burada YouTube videolarımı ve içeriklerimi bulabilirsiniz.</p>
+    <header>
+        <h1>Daima Oyunda'ya Hoş Geldiniz!</h1>
+        <p>Burada oyun videoları, açıklamalar ve tanışma fırsatları bulabilirsiniz.</p>
+    </header>
 
-    <section id="hakkimizda">
-        <h2>Hakkımızda</h2>
-        <p>Merhaba! Ben Onur, <strong>Daima Oyunda</strong> kanalının yaratıcısıyım. Amacımız, oyun dünyasında eğlenceli içerikler, rehberler ve daha fazlasını sunmak!</p>
-        <p>Kanalımızda <em>Marvel: Contest of Champions</em>, <em>MW3</em>, <em>PUBG Mobile</em> gibi oyunlar ve program rehberlerini bulabilirsiniz.</p>
-        <p>YouTube kanalımıza göz atmak için: 
-            <a href="https://www.youtube.com/@daimaoyunda" target="_blank">Daima Oyunda</a>
-        </p>
-    </section>
+    <!-- Menü Seçenekleri -->
+    <div class="menu">
+        <button onclick="showContent('videos')">Oyun Videoları</button>
+        <button onclick="showContent('descriptions')">Oyun Açıklamaları</button>
+        <button onclick="showContent('meet')">Tanışma Platformu</button>
+        <button onclick="showContent('team')">Ekip Platformu</button>
+    </div>
+
+    <!-- Dinamik İçerik Alanı -->
+    <div class="content" id="content">
+        <p>İçerik görmek için yukarıdaki seçeneklerden birine tıklayın.</p>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
