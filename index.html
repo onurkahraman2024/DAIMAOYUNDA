@@ -1,34 +1,68 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daima Oyunda</title>
     <style>
-        /* Sayfa genel stili */
+        /* Genel sayfa stili */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
+            background-image: url('https://upload.wikimedia.org/wikipedia/en/8/88/Marvel_Contest_of_Champions_logo.png'); /* Arka plan görseli */
+            background-size: cover; /* Görsel ekranı kaplar */
+            background-repeat: no-repeat; /* Görsel tekrar etmez */
+            background-attachment: fixed; /* Arka plan sabitlenir */
+            background-position: center; /* Görsel merkezlenir */
+            color: white; /* Yazıları daha okunabilir hale getirmek için beyaz yapıyoruz */
             margin: 0;
             padding: 0;
-            color: #333;
-            background-image: url('https://via.placeholder.com/1920x1080'); /* Arka plan görseli */
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            height: 100vh; /* Sayfanın tamamının görseli kapsaması için */
-            display: flex;
-            flex-direction: column;
         }
-        header {
-            background-color: rgba(51, 51, 51, 0.7); /* Yarı saydam arka plan */
-            color: white;
-            padding: 20px 0;
-            text-align: center;
-            width: 100%;
-        }
-        .menu {
+        h1 {
+            font-size: 2.5rem;
+            color: #ff4500;
             text-align: center;
             margin-top: 20px;
+        }
+        p.intro {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #555;
+            text-align: center;
+            margin: 20px auto;
+        }
+        p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin: 10px 20px;
+            text-align: justify;
+        }
+        #hakkimizda {
+            background-color: rgba(255, 255, 255, 0.8); /* Yarı saydam arka plan */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin: 20px auto;
+            padding: 20px;
+            width: 90%;
+            max-width: 800px;
+        }
+        h2 {
+            font-size: 2rem;
+            color: #333;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        a {
+            color: #007acc;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        /* Menü Butonları */
+        .menu {
+            text-align: center;
+            margin-top: 30px;
         }
         .menu button {
             padding: 10px 20px;
@@ -43,62 +77,25 @@
         .menu button:hover {
             background-color: #0056b3;
         }
-        /* Dinamik içerik alanı */
-        .content {
-            margin: 20px;
-            padding: 20px;
-            background-color: rgba(255, 255, 255, 0.8); /* İçerik kutusu yarı saydam */
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            text-align: center;
-        }
-        .content h2 {
-            font-size: 24px;
-        }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Daima Oyunda'ya Hoş Geldiniz!</h1>
-        <p>Burada oyun videoları, açıklamalar ve tanışma fırsatları bulabilirsiniz.</p>
-    </header>
+    <h1>Daima Oyunda'ya Hoş Geldiniz!</h1>
+    <p class="intro">Burada YouTube videolarımı ve içeriklerimi bulabilirsiniz.</p>
+
+    <section id="hakkimizda">
+        <h2>Hakkımızda</h2>
+        <p>Merhaba! Ben Onur, <strong>Daima Oyunda</strong> kanalının yaratıcısıyım. Amacımız, oyun dünyasında eğlenceli içerikler, rehberler ve daha fazlasını sunmak!</p>
+        <p>Kanalımızda <em>Marvel: Contest of Champions</em>, <em>MW3</em>, <em>PUBG Mobile</em> gibi oyunlar ve program rehberlerini bulabilirsiniz.</p>
+        <p>YouTube kanalımıza göz atmak için: 
+            <a href="https://www.youtube.com/@daimaoyunda" target="_blank">Daima Oyunda</a>
+        </p>
+    </section>
 
     <!-- Menü Seçenekleri -->
     <div class="menu">
-        <button onclick="showContent('videos')">Oyun Videoları</button>
-        <button onclick="showContent('descriptions')">Oyun Açıklamaları</button>
-        <button onclick="showContent('meet')">Tanışma Platformu</button>
-        <button onclick="showContent('team')">Ekip Platformu</button>
+        <button onclick="window.location.href='https://www.youtube.com/@daimaoyunda'">Kanalı Ziyaret Et</button>
+        <button onclick="window.location.href='https://www.youtube.com/@daimaoyunda/videos'">Videolar</button>
     </div>
-
-    <!-- Dinamik İçerik Alanı -->
-    <div class="content" id="content">
-        <p>İçerik görmek için yukarıdaki seçeneklerden birine tıklayın.</p>
-    </div>
-
-    <script>
-        // Dinamik içerik gösterme fonksiyonu
-        function showContent(contentType) {
-            let content = document.getElementById('content');
-            
-            // İçeriği değiştir
-            switch (contentType) {
-                case 'videos':
-                    content.innerHTML = '<h2>Oyun Videoları</h2><p>Burada en yeni oyun videolarımızı bulabilirsiniz.</p>';
-                    break;
-                case 'descriptions':
-                    content.innerHTML = '<h2>Oyun Açıklamaları</h2><p>Oyunlarımız hakkında detaylı açıklamaları burada bulabilirsiniz.</p>';
-                    break;
-                case 'meet':
-                    content.innerHTML = '<h2>Tanışma Platformu</h2><p>Diğer oyuncularla tanışabilir ve sosyal etkileşimde bulunabilirsiniz.</p>';
-                    break;
-                case 'team':
-                    content.innerHTML = '<h2>Ekip Platformu</h2><p>Oyuncu ekibimizle iletişime geçebilir ve birlikte oyun oynayabilirsiniz.</p>';
-                    break;
-                default:
-                    content.innerHTML = '<p>İçerik görmek için yukarıdaki seçeneklerden birine tıklayın.</p>';
-            }
-        }
-    </script>
 </body>
 </html>
