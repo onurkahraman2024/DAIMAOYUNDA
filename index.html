@@ -5,87 +5,86 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daima Oyunda</title>
     <style>
-        /* Genel sayfa stili */
+        /* Genel Stiller */
         body {
-            font-family: 'Arial', sans-serif;
-            background-image: url('https://upload.wikimedia.org/wikipedia/en/8/88/Marvel_Contest_of_Champions_logo.png'); /* Arka plan görseli */
-            background-size: cover; /* Görsel ekranı kaplar */
-            background-repeat: no-repeat; /* Görsel tekrar etmez */
-            background-attachment: fixed; /* Arka plan sabitlenir */
-            background-position: center; /* Görsel merkezlenir */
-            background-color: #000; /* Eğer görsel yüklenemezse, siyah arka plan */
-            color: white; /* Yazıları beyaz yapıyoruz */
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            height: 100vh; /* Sayfa yüksekliği %100 */
+            background-image: url('https://your-marvel-background-image-link.jpg'); /* Marvel temalı arka plan URL'sini buraya koy */
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            color: #333;
         }
         h1 {
-            font-size: 2.5rem;
             color: #ff4500;
             text-align: center;
-            margin-top: 20px;
-        }
-        p.intro {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: white; /* Beyaz renk */
-            text-align: center;
-            margin: 20px auto;
-        }
-        p {
-            font-size: 1.2rem;
-            line-height: 1.6;
-            margin: 10px 20px;
-            text-align: justify;
-            color: white; /* Beyaz renk */
-        }
-        #hakkimizda {
-            background-color: rgba(0, 0, 0, 0.6); /* Yarı saydam siyah arka plan */
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            margin: 20px auto;
             padding: 20px;
-            width: 90%;
-            max-width: 800px;
+            font-size: 2.5em;
         }
-        h2 {
-            font-size: 2rem;
-            color: white; /* Beyaz renk */
-            text-align: center;
-            margin-bottom: 15px;
+        p, a {
+            font-size: 1.2em;
         }
         a {
-            color: #007acc;
+            color: #ff4500;
             text-decoration: none;
-            font-weight: bold;
         }
         a:hover {
             text-decoration: underline;
         }
-        /* Menü Butonları */
-        .menu {
-            text-align: center;
-            margin-top: 30px;
+        /* Hakkımızda Kartı */
+        #hakkimizda {
+            background: rgba(255, 255, 255, 0.9);
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 800px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
-        .menu button {
-            padding: 10px 20px;
+        /* Seçenekler */
+        #selections {
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 800px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        button {
             margin: 10px;
-            font-size: 16px;
-            cursor: pointer;
-            background-color: #007bff;
-            color: white;
+            padding: 10px 20px;
+            font-size: 1.2em;
             border: none;
+            background-color: #ff4500;
+            color: white;
             border-radius: 5px;
+            cursor: pointer;
         }
-        .menu button:hover {
-            background-color: #0056b3;
+        button:hover {
+            background-color: #e03d00;
+        }
+        /* İçerik Bölgesi */
+        #content {
+            margin-top: 20px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+        }
+        /* Copyright Yazısı */
+        footer {
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+            background-color: #333;
+            color: white;
         }
     </style>
 </head>
 <body>
     <h1>Daima Oyunda'ya Hoş Geldiniz!</h1>
-    <p class="intro">Burada YouTube videolarımı ve içeriklerimi bulabilirsiniz.</p>
+    <p style="text-align: center;">Burada YouTube videolarımı ve içeriklerimi bulabilirsiniz.</p>
 
+    <!-- Hakkımızda -->
     <section id="hakkimizda">
         <h2>Hakkımızda</h2>
         <p>Merhaba! Ben Onur, <strong>Daima Oyunda</strong> kanalının yaratıcısıyım. Amacımız, oyun dünyasında eğlenceli içerikler, rehberler ve daha fazlasını sunmak!</p>
@@ -95,10 +94,29 @@
         </p>
     </section>
 
-    <!-- Menü Seçenekleri -->
-    <div class="menu">
-        <button onclick="window.location.href='https://www.youtube.com/@daimaoyunda'">Kanalı Ziyaret Et</button>
-        <button onclick="window.location.href='https://www.youtube.com/@daimaoyunda/videos'">Videolar</button>
-    </div>
+    <!-- Seçenekler -->
+    <section id="selections">
+        <h2>Keşfet</h2>
+        <p>Lütfen aşağıdaki seçeneklerden birini seçin:</p>
+        <button onclick="showContent('Oyun Videoları')">Oyun Videoları</button>
+        <button onclick="showContent('Oyun Açıklamaları')">Oyun Açıklamaları</button>
+        <button onclick="showContent('Tanışma Platformu')">Tanışma Platformu</button>
+        <button onclick="showContent('Ekip Platformu')">Ekip Platformu</button>
+        <div id="content">
+            <!-- Dinamik içerik buraya gelecek -->
+        </div>
+    </section>
+
+    <!-- Copyright -->
+    <footer>
+        Copyright &copy; 2024 Daima Oyunda. Tüm Hakları Saklıdır.
+    </footer>
+
+    <script>
+        function showContent(option) {
+            const contentDiv = document.getElementById('content');
+            contentDiv.innerHTML = `<h3>${option}</h3><p>${option} ile ilgili içerikler buraya gelecek.</p>`;
+        }
+    </script>
 </body>
 </html>
