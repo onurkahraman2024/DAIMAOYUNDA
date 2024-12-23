@@ -19,17 +19,22 @@
             padding: 20px 0;
         }
         nav {
-            text-align: center;
-            padding: 10px;
+            display: flex;
+            justify-content: center;
             background-color: #333;
+            padding: 10px;
         }
         nav a {
             color: white;
             margin: 0 15px;
             text-decoration: none;
+            font-weight: bold;
+            padding: 5px 10px;
         }
         nav a:hover {
-            color: #ff4500;
+            background-color: #ff4500;
+            color: white;
+            border-radius: 5px;
         }
         #content {
             padding: 20px;
@@ -62,8 +67,10 @@
     </header>
 
     <nav>
-        <a href="#" onclick="showVideos()">Oyun Videoları</a>
         <a href="#" onclick="showHome()">Anasayfa</a>
+        <a href="#" onclick="showVideos()">Oyun Videoları</a>
+        <a href="#" onclick="showDescriptions()">Oyun Açıklamaları</a>
+        <a href="#" onclick="showMeet()">Tanışma Platformu</a>
     </nav>
 
     <div id="content">
@@ -81,7 +88,7 @@
             {
                 title: "Marvel: Contest of Champions Rehberi",
                 description: "Bu video Marvel: Contest of Champions için başlangıç rehberidir.",
-                videoId: "abc123" // Buraya YouTube video ID'si gelecek
+                videoId: "abc123" // YouTube video ID'si
             },
             {
                 title: "PUBG Mobile İpuçları",
@@ -95,7 +102,7 @@
             }
         ];
 
-        // Anasayfa gösterimi
+        // Anasayfa içeriği
         function showHome() {
             const contentDiv = document.getElementById('content');
             contentDiv.innerHTML = `
@@ -104,7 +111,7 @@
             `;
         }
 
-        // Videoları gösterme
+        // Videolar içeriği
         function showVideos() {
             const contentDiv = document.getElementById('content');
             let videoContent = '<h2>Oyun Videoları</h2>';
@@ -119,6 +126,27 @@
             });
             contentDiv.innerHTML = videoContent;
         }
+
+        // Oyun açıklamaları içeriği
+        function showDescriptions() {
+            const contentDiv = document.getElementById('content');
+            contentDiv.innerHTML = `
+                <h2>Oyun Açıklamaları</h2>
+                <p>Burada oynadığımız oyunların detaylı açıklamalarını bulabilirsiniz.</p>
+            `;
+        }
+
+        // Tanışma platformu içeriği
+        function showMeet() {
+            const contentDiv = document.getElementById('content');
+            contentDiv.innerHTML = `
+                <h2>Tanışma Platformu</h2>
+                <p>Topluluğumuzdaki diğer oyuncularla tanışabilir ve sohbet edebilirsiniz.</p>
+            `;
+        }
+
+        // Varsayılan olarak Anasayfa'yı göster
+        showHome();
     </script>
 </body>
 </html>
