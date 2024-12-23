@@ -10,67 +10,59 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-image: url('https://your-marvel-background-image-link.jpg'); /* Marvel temalı arka plan URL'sini buraya koy */
-            background-size: cover;
-            background-attachment: fixed;
-            background-position: center;
+            background-color: #f4f4f4;
             color: #333;
         }
-        h1 {
-            color: #ff4500;
-            text-align: center;
-            padding: 20px;
-            font-size: 2.5em;
-        }
-        p, a {
-            font-size: 1.2em;
-        }
-        a {
-            color: #ff4500;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        /* Hakkımızda Kartı */
-        #hakkimizda {
-            background: rgba(255, 255, 255, 0.9);
-            margin: 20px auto;
-            padding: 20px;
-            max-width: 800px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-        /* Seçenekler */
-        #selections {
-            margin: 20px auto;
-            padding: 20px;
-            max-width: 800px;
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-        button {
-            margin: 10px;
-            padding: 10px 20px;
-            font-size: 1.2em;
-            border: none;
+
+        /* Sabit Başlık */
+        header {
             background-color: #ff4500;
             color: white;
-            border-radius: 5px;
-            cursor: pointer;
+            text-align: center;
+            padding: 20px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-        button:hover {
-            background-color: #e03d00;
+
+        header h1 {
+            margin: 0;
+            font-size: 2em;
         }
-        /* İçerik Bölgesi */
+
+        /* Navigasyon Çubuğu */
+        nav {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            top: 70px;
+            width: 100%;
+            z-index: 999;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2em;
+        }
+
+        nav a:hover {
+            color: #ff4500;
+        }
+
+        /* İçerik Alanı */
         #content {
-            margin-top: 20px;
+            margin-top: 150px;
             padding: 20px;
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 10px;
+            text-align: center;
         }
-        /* Copyright Yazısı */
+
+        /* Copyright */
         footer {
             text-align: center;
             padding: 10px;
@@ -81,31 +73,24 @@
     </style>
 </head>
 <body>
-    <h1>Daima Oyunda'ya Hoş Geldiniz!</h1>
-    <p style="text-align: center;">Burada YouTube videolarımı ve içeriklerimi bulabilirsiniz.</p>
+    <!-- Sabit Başlık -->
+    <header>
+        <h1>DAİMA OYUNDA</h1>
+    </header>
 
-    <!-- Hakkımızda -->
-    <section id="hakkimizda">
-        <h2>Hakkımızda</h2>
-        <p>Merhaba! Ben Onur, <strong>Daima Oyunda</strong> kanalının yaratıcısıyım. Amacımız, oyun dünyasında eğlenceli içerikler, rehberler ve daha fazlasını sunmak!</p>
-        <p>Kanalımızda <em>Marvel: Contest of Champions</em>, <em>MW3</em>, <em>PUBG Mobile</em> gibi oyunlar ve program rehberlerini bulabilirsiniz.</p>
-        <p>YouTube kanalımıza göz atmak için: 
-            <a href="https://www.youtube.com/@daimaoyunda" target="_blank">Daima Oyunda</a>
-        </p>
-    </section>
+    <!-- Navigasyon Çubuğu -->
+    <nav>
+        <a href="#" onclick="showPage('Ana Sayfa')">Anasayfa</a>
+        <a href="#" onclick="showPage('Oyun Videoları')">Oyun Videoları</a>
+        <a href="#" onclick="showPage('Oyun Açıklamaları')">Oyun Açıklamaları</a>
+        <a href="#" onclick="showPage('Tanışma')">Tanışma</a>
+    </nav>
 
-    <!-- Seçenekler -->
-    <section id="selections">
-        <h2>Keşfet</h2>
-        <p>Lütfen aşağıdaki seçeneklerden birini seçin:</p>
-        <button onclick="showContent('Oyun Videoları')">Oyun Videoları</button>
-        <button onclick="showContent('Oyun Açıklamaları')">Oyun Açıklamaları</button>
-        <button onclick="showContent('Tanışma Platformu')">Tanışma Platformu</button>
-        <button onclick="showContent('Ekip Platformu')">Ekip Platformu</button>
-        <div id="content">
-            <!-- Dinamik içerik buraya gelecek -->
-        </div>
-    </section>
+    <!-- Dinamik İçerik Alanı -->
+    <div id="content">
+        <h2>Ana Sayfa</h2>
+        <p>Burada YouTube videolarımı ve içeriklerimi bulabilirsiniz.</p>
+    </div>
 
     <!-- Copyright -->
     <footer>
@@ -113,9 +98,36 @@
     </footer>
 
     <script>
-        function showContent(option) {
+        function showPage(pageName) {
             const contentDiv = document.getElementById('content');
-            contentDiv.innerHTML = `<h3>${option}</h3><p>${option} ile ilgili içerikler buraya gelecek.</p>`;
+            let content = '';
+
+            switch (pageName) {
+                case 'Ana Sayfa':
+                    content = `
+                        <h2>Ana Sayfa</h2>
+                        <p>Burada YouTube videolarımı ve içeriklerimi bulabilirsiniz.</p>`;
+                    break;
+                case 'Oyun Videoları':
+                    content = `
+                        <h2>Oyun Videoları</h2>
+                        <p>Marvel: Contest of Champions, MW3, PUBG Mobile gibi oyunların videoları burada!</p>`;
+                    break;
+                case 'Oyun Açıklamaları':
+                    content = `
+                        <h2>Oyun Açıklamaları</h2>
+                        <p>Oyunların püf noktalarını ve rehberlerini bu bölümde bulabilirsiniz.</p>`;
+                    break;
+                case 'Tanışma':
+                    content = `
+                        <h2>Tanışma Platformu</h2>
+                        <p>Diğer oyuncularla tanışmak ve iletişim kurmak için bu bölümü kullanabilirsiniz.</p>`;
+                    break;
+                default:
+                    content = `<h2>Hata</h2><p>Sayfa bulunamadı.</p>`;
+            }
+
+            contentDiv.innerHTML = content;
         }
     </script>
 </body>
