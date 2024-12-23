@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daima Oyunda</title>
     <style>
-        /* Genel Stiller */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -13,121 +12,112 @@
             background-color: #f4f4f4;
             color: #333;
         }
-
-        /* Sabit Başlık */
         header {
             background-color: #ff4500;
             color: white;
             text-align: center;
             padding: 20px 0;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-
-        header h1 {
-            margin: 0;
-            font-size: 2em;
-        }
-
-        /* Navigasyon Çubuğu */
         nav {
-            background-color: #333;
-            color: white;
             text-align: center;
-            padding: 10px 0;
-            position: fixed;
-            top: 70px;
-            width: 100%;
-            z-index: 999;
+            padding: 10px;
+            background-color: #333;
         }
-
         nav a {
             color: white;
-            text-decoration: none;
             margin: 0 15px;
-            font-size: 1.2em;
+            text-decoration: none;
         }
-
         nav a:hover {
             color: #ff4500;
         }
-
-        /* İçerik Alanı */
         #content {
-            margin-top: 150px;
             padding: 20px;
             text-align: center;
         }
-
-        /* Copyright */
+        .video {
+            margin: 20px 0;
+            border: 1px solid #ccc;
+            padding: 10px;
+            background-color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        iframe {
+            width: 80%;
+            height: 315px;
+            border: none;
+        }
         footer {
             text-align: center;
             padding: 10px;
-            margin-top: 20px;
             background-color: #333;
             color: white;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
-    <!-- Sabit Başlık -->
     <header>
         <h1>DAİMA OYUNDA</h1>
     </header>
 
-    <!-- Navigasyon Çubuğu -->
     <nav>
-        <a href="#" onclick="showPage('Ana Sayfa')">Anasayfa</a>
-        <a href="#" onclick="showPage('Oyun Videoları')">Oyun Videoları</a>
-        <a href="#" onclick="showPage('Oyun Açıklamaları')">Oyun Açıklamaları</a>
-        <a href="#" onclick="showPage('Tanışma')">Tanışma</a>
+        <a href="#" onclick="showVideos()">Oyun Videoları</a>
+        <a href="#" onclick="showHome()">Anasayfa</a>
     </nav>
 
-    <!-- Dinamik İçerik Alanı -->
     <div id="content">
-        <h2>Ana Sayfa</h2>
-        <p>Burada YouTube videolarımı ve içeriklerimi bulabilirsiniz.</p>
+        <h2>Hoş Geldiniz!</h2>
+        <p>Burada YouTube kanalımızdaki içerikleri bulabilirsiniz.</p>
     </div>
 
-    <!-- Copyright -->
     <footer>
         Copyright &copy; 2024 Daima Oyunda. Tüm Hakları Saklıdır.
     </footer>
 
     <script>
-        function showPage(pageName) {
-            const contentDiv = document.getElementById('content');
-            let content = '';
-
-            switch (pageName) {
-                case 'Ana Sayfa':
-                    content = `
-                        <h2>Ana Sayfa</h2>
-                        <p>Burada YouTube videolarımı ve içeriklerimi bulabilirsiniz.</p>`;
-                    break;
-                case 'Oyun Videoları':
-                    content = `
-                        <h2>Oyun Videoları</h2>
-                        <p>Marvel: Contest of Champions, MW3, PUBG Mobile gibi oyunların videoları burada!</p>`;
-                    break;
-                case 'Oyun Açıklamaları':
-                    content = `
-                        <h2>Oyun Açıklamaları</h2>
-                        <p>Oyunların püf noktalarını ve rehberlerini bu bölümde bulabilirsiniz.</p>`;
-                    break;
-                case 'Tanışma':
-                    content = `
-                        <h2>Tanışma Platformu</h2>
-                        <p>Diğer oyuncularla tanışmak ve iletişim kurmak için bu bölümü kullanabilirsiniz.</p>`;
-                    break;
-                default:
-                    content = `<h2>Hata</h2><p>Sayfa bulunamadı.</p>`;
+        // Videoların listesi
+        const videos = [
+            {
+                title: "Marvel: Contest of Champions Rehberi",
+                description: "Bu video Marvel: Contest of Champions için başlangıç rehberidir.",
+                videoId: "abc123" // Buraya YouTube video ID'si gelecek
+            },
+            {
+                title: "PUBG Mobile İpuçları",
+                description: "PUBG Mobile'da daha iyi oynamak için ipuçları.",
+                videoId: "def456"
+            },
+            {
+                title: "Call of Duty: MW3 Taktikleri",
+                description: "Modern Warfare 3'te başarılı olmak için taktikler.",
+                videoId: "ghi789"
             }
+        ];
 
-            contentDiv.innerHTML = content;
+        // Anasayfa gösterimi
+        function showHome() {
+            const contentDiv = document.getElementById('content');
+            contentDiv.innerHTML = `
+                <h2>Hoş Geldiniz!</h2>
+                <p>Burada YouTube kanalımızdaki içerikleri bulabilirsiniz.</p>
+            `;
+        }
+
+        // Videoları gösterme
+        function showVideos() {
+            const contentDiv = document.getElementById('content');
+            let videoContent = '<h2>Oyun Videoları</h2>';
+            videos.forEach(video => {
+                videoContent += `
+                    <div class="video">
+                        <h3>${video.title}</h3>
+                        <p>${video.description}</p>
+                        <iframe src="https://www.youtube.com/embed/${video.videoId}" allowfullscreen></iframe>
+                    </div>
+                `;
+            });
+            contentDiv.innerHTML = videoContent;
         }
     </script>
 </body>
